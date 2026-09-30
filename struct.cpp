@@ -52,5 +52,36 @@ int main() {
         {"1301223394",   "RAFLI NUJJIYA MAULANA", 50.0}
     };
 
+    cout << "=== DAFTAR MAHASISWA ===" << endl;
+    for (int i = 0; i < 40; i++) {
+        cout << i + 1 << "\t| " << mahasiswa[i].nim << " | " << mahasiswa[i].nama << " | " << mahasiswa[i].persentaseKehadiran << "%" << endl;
+    }
+    cout << "Total Mahasiswa: 40\n\n";
+
+    string targetNim = "103012530045";
+    float kehadiranBaru = 85.0;
+    bool ditemukan = false;
+
+    cout << "--- MENCARI DAN UPDATE DATA ---" << endl;
+    cout << "Mencari mahasiswa dengan NIM " << targetNim << "...\n" << endl;
+
+    for (int i = 0; i < 40 && !ditemukan; i++) {
+        if (mahasiswa[i].nim == targetNim) {
+            ditemukan = true; 
+            
+            cout << "[SEBELUM UPDATE]" << endl;
+            cout << "NIM       : " << mahasiswa[i].nim << "\nNama      : " << mahasiswa[i].nama << "\nKehadiran : " << mahasiswa[i].persentaseKehadiran << "%\n" << endl;
+            
+            mahasiswa[i].persentaseKehadiran = kehadiranBaru;
+            
+            cout << "[SESUDAH UPDATE]" << endl;
+            cout << "NIM       : " << mahasiswa[i].nim << "\nNama      : " << mahasiswa[i].nama << "\nKehadiran : " << mahasiswa[i].persentaseKehadiran << "%\n\n";
+        }
+    }
+
+    if (!ditemukan) {
+        cout << "NIM " << targetNim << " tidak ditemukan di dalam data.\n\n";
+    }
+
     return 0;
 }
