@@ -46,14 +46,19 @@ int main() {
     cout << "Total Mahasiswa: 40\n\n";
 
     string targetNim = "103012530045";
+    float kehadiranBaru = 85.0;
     bool ditemukan = false;
 
-    cout << "Mencari mahasiswa dengan NIM " << targetNim << "...\n" << endl;
+    cout << "Mencari dan update mahasiswa dengan NIM " << targetNim << "...\n" << endl;
 
     for (int i = 0; i < 40 && !ditemukan; i++) {
         if (nim[i] == targetNim) {
             ditemukan = true;
-            cout << "Mahasiswa Ditemukan: " << nama[i] << " (" << persentaseKehadiran[i] << "%)\n" << endl;
+            cout << "[SEBELUM UPDATE]\nNIM: " << nim[i] << " | Nama: " << nama[i] << " | Kehadiran: " << persentaseKehadiran[i] << "%\n";
+            
+            persentaseKehadiran[i] = kehadiranBaru;
+            
+            cout << "[SESUDAH UPDATE]\nNIM: " << nim[i] << " | Nama: " << nama[i] << " | Kehadiran: " << persentaseKehadiran[i] << "%\n\n";
         }
     }
 
