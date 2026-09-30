@@ -39,5 +39,23 @@ int main() {
         100, 100, 100, 100, 50,  100, 100, 100, 50,  50
     };
 
+    cout << "=== DAFTAR MAHASISWA ===" << endl;
+    for (int i = 0; i < 40; i++) {
+        cout << i + 1 << "\t| " << nim[i] << " | " << nama[i] << " | " << persentaseKehadiran[i] << "%" << endl;
+    }
+    cout << "Total Mahasiswa: 40\n\n";
+
+    string targetNim = "103012530045";
+    bool ditemukan = false;
+
+    cout << "Mencari mahasiswa dengan NIM " << targetNim << "...\n" << endl;
+
+    for (int i = 0; i < 40 && !ditemukan; i++) {
+        if (nim[i] == targetNim) {
+            ditemukan = true;
+            cout << "Mahasiswa Ditemukan: " << nama[i] << " (" << persentaseKehadiran[i] << "%)\n" << endl;
+        }
+    }
+
     return 0;
 }
